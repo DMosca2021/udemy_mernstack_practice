@@ -2,7 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Nav from './components/Nav'
+import Home from './pages/Home';
+import Game from './pages/Game';
+import Nav from './components/Nav';
 
 function App() {
   return (
@@ -20,9 +22,7 @@ function App() {
         >
           Learn React
         </a>
-        <Router>
-          <Nav />
-        </Router>
+        <Game />
       </header>
     </div>
   );
