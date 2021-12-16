@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Temp canvas padding until I get it to stop double rendering. */
+canvas {
+  padding: 5px;
+}

@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { useCallback, useEffect, useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
 
 
 function Game() {
@@ -8,6 +9,7 @@ function Game() {
     //     parent: 'game-content',
     // })
 
+/*     // Config for phaser demo
     const config = {
         type: Phaser.AUTO,
         width: 800,
@@ -23,7 +25,33 @@ function Game() {
             preload: preload,
             create: create
         }
-    };
+    }; */
+
+    // Config for survival game 
+    const config = {
+        type: Phaser.AUTO,
+        width: 512,
+        height: 512, 
+        backgroundColor: '#333333',
+        parent: 'game-content',
+        physics: {
+            default: 'matter',
+            matter: {
+                debug: true,
+                gravity: {y:0},
+            }
+        },
+        scene: [],
+        // plugins: {
+        //     scene: [
+        //         {
+        //             plugin: PhaserMatterCollisionPlugin,
+        //             key: 'matterCollision',
+        //             mapping: 'matterCollision,'
+        //         }
+        //     ]
+        // }
+    }
 
     const game = new Phaser.Game(config);
 
