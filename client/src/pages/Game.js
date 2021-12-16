@@ -12,6 +12,7 @@ function Game() {
         type: Phaser.AUTO,
         width: 800,
         height: 600,
+        parent: 'game-content',
         physics: {
             default: 'arcade',
             arcade: {
@@ -56,9 +57,9 @@ function Game() {
         emitter.startFollow(logo);
     }
 
-    return <div id='game-content' />
+    return <div  />
 }
 
-
+// Game currently renders twice on page, look into using useEffect to make it render once.
 
 export default Game;
