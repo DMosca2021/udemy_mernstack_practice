@@ -25,7 +25,7 @@ function Game() {
 
   //-----Beginning to the game arrow function from https://github.com/blopa/top-down-react-phaser-game-template/blob/main/src/Game.jsx
   // Trying to get the useEffect working so the game does not render multiple times.
-  
+
   const dispatch = useDispatch();
   const [game, setGame] = useState(null);
 
@@ -79,33 +79,7 @@ function Game() {
         }
     } */
 
-  function preload() {
-    this.load.setBaseURL("http://labs.phaser.io");
 
-    this.load.image("sky", "assets/skies/space3.png");
-    this.load.image("logo", "assets/sprites/phaser3-logo.png");
-    this.load.image("red", "assets/particles/red.png");
-  }
-
-  function create() {
-    this.add.image(400, 300, "sky");
-
-    const particles = this.add.particles("red");
-
-    const emitter = particles.createEmitter({
-      speed: 100,
-      scale: { start: 1, end: 0 },
-      blendMode: "ADD",
-    });
-
-    const logo = this.physics.add.image(400, 100, "logo");
-
-    logo.setVelocity(100, 200);
-    logo.setBounce(1, 1);
-    logo.setCollideWorldBounds(true);
-
-    emitter.startFollow(logo);
-  }
 
   return (
     <div>
