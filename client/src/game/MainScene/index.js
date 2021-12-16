@@ -1,6 +1,7 @@
+import Phaser from "phaser";
 import { Scene } from "phaser";
 
-export default class MainScene extends Scene {
+export default class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
   }
@@ -16,28 +17,32 @@ export default class MainScene extends Scene {
   }
 
   create() {
-    /*     this.add.image(400, 300, "sky");
-
-    const particles = this.add.particles("red");
-
-    const emitter = particles.createEmitter({
-      speed: 100,
-      scale: { start: 1, end: 0 },
-      blendMode: "ADD",
-    });
-
-    const logo = this.physics.add.image(400, 100, "logo");
-
-    logo.setVelocity(100, 200);
-    logo.setBounce(1, 1);
-    logo.setCollideWorldBounds(true);
-
-    emitter.startFollow(logo); */
-
     console.log("create");
+    this.player = new Phaser.Physics.Matter.Sprite(this.matter.world);
+    this.inputKeys = this.input.keyboard.addKeys({
+        up: Phaser.Input.Keyboard.KeyCodes.W,
+        down: Phaser.Input.Keyboard.KeyCodes.S,
+        left: Phaser.Input.Keyboard.KeyCodes.A,
+        right: Phaser.Input.Keyboard.KeyCodes.D,
+    })
   }
 
   update() {
     console.log("update");
+    const speed = 2.5;
+    let playerVelocity = new Phaser.Math.Vector2();
+    if(this.inputKeys.left.isDown) {
+        playerVelocity.x = -1;
+    } else if (this.inputKeys.right.isDown) {
+        playerVelocity.x = 1;
+    }
+    if(this.inputKeys.up.isDown) {
+        playerVelocity.y = -1;
+    } else if (this.inputKeys.down.isDown) {
+        playerVelocity.y = 1;
+    }
+    playerVelocity.normalize();
+    playerVelocity.scale(speed);
+    this.player.setVelocity(playerVelocity.x, playerVelocity.y);
   }
 }

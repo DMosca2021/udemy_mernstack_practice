@@ -26,7 +26,7 @@ function Game() {
   //-----Beginning to the game arrow function from https://github.com/blopa/top-down-react-phaser-game-template/blob/main/src/Game.jsx
   // Trying to get the useEffect working so the game does not render multiple times.
 
-  const dispatch = useDispatch();
+/*   const dispatch = useDispatch();
   const [game, setGame] = useState(null);
 
   useEffect(() => {
@@ -51,9 +51,9 @@ function Game() {
     });
 
     setGame(phaserGame);
-  }, [game]);
+  }, [game]); */
 
-  /*     // Config for survival game 
+      // Config for survival game 
     const config = {
         type: Phaser.AUTO,
         width: 512,
@@ -67,19 +67,19 @@ function Game() {
                 gravity: {y:0},
             }
         },
-        scene: [],
-        plugins: {
-            scene: [
-                {
-                    plugin: PhaserMatterCollisionPlugin,
-                    key: 'matterCollision',
-                    mapping: 'matterCollision,'
-                }
-            ]
-        }
-    } */
+        scene: [MainScene],
+        // plugins: {
+        //     scene: [
+        //         {
+        //             plugin: PhaserMatterCollisionPlugin,
+        //             key: 'matterCollision',
+        //             mapping: 'matterCollision,'
+        //         }
+        //     ]
+        // }
+    };
 
-
+    const game = new Phaser.Game(config);
 
   return (
     <div>

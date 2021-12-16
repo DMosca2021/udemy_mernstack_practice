@@ -1,10 +1,10 @@
-import { createStore } from "redux";
+// import { createStore } from "redux";
 
-function configureStore(initialState = {}) {
-    return createStore(
-        rootReducer,
-        initialState
-    )
-}
+// function configureStore(initialState = {}) {
+//     return createStore(
+//         rootReducer,
+//         initialState
+//     )
+// }
 
-export default configureStore();
+// export default configureStore();
