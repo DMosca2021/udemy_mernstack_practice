@@ -56,8 +56,8 @@ function Game() {
       // Config for survival game 
     const config = {
         type: Phaser.AUTO,
-        width: 512,
-        height: 512, 
+        width: 800,
+        height: 600, 
         backgroundColor: '#333333',
         parent: 'game-content',
         physics: {
