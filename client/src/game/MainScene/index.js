@@ -11,12 +11,12 @@ export default class MainScene extends Phaser.Scene {
 
   preload() {
     console.log("preload");
-    this.load.atlas('test_sprite', testSprite, spriteAtlas)
+    this.load.atlas('test_sprite2', testSprite, spriteAtlas)
   }
 
   create() {
     console.log("create");
-    this.player = new Phaser.Physics.Matter.Sprite(this.matter.world,0,0,'test_sprite');
+    this.player = new Phaser.Physics.Matter.Sprite(this.matter.world,400,300,'test_sprite2', "knight_idle_1");
     this.add.existing(this.player);
     this.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
