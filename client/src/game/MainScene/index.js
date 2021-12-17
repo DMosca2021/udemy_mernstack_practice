@@ -1,8 +1,10 @@
 import Phaser from "phaser";
 import { Scene } from "phaser";
 
-import spriteAtlas from '../assets/images/test_sprite_atlas.json'
-import testSprite from '../assets/images/test_sprite.png'
+import spriteAtlas from "../assets/images/test_sprite2_atlas.json";
+import testSprite from "../assets/images/test_sprite2.png";
+// import spriteAtlas from "../assets/images/knight-sprite.json";
+// import testSprite from "../assets/images/knight-sprite.png";
 
 export default class MainScene extends Phaser.Scene {
   constructor() {
@@ -11,12 +13,19 @@ export default class MainScene extends Phaser.Scene {
 
   preload() {
     console.log("preload");
-    this.load.atlas('test_sprite2', testSprite, spriteAtlas)
+    this.load.spritesheet('test_sprite2', testSprite, spriteAtlas)
+    console.log(testSprite, spriteAtlas)
   }
 
   create() {
     console.log("create");
-    this.player = new Phaser.Physics.Matter.Sprite(this.matter.world,400,300,'test_sprite2', "knight_idle_1");
+    this.player = new Phaser.Physics.Matter.Sprite(
+      this.matter.world,
+      400,
+      300,
+      "atlas",
+      "knight_idle_1"
+    );
     this.add.existing(this.player);
     this.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
