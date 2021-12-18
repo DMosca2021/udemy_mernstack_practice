@@ -1,22 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Nav() {
   return (
     <>
-      <div>
+      <nav>
         <ul>
           <li>
-            <button>
-              <Link to="/">Home</Link>
-            </button>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <button>
-              <Link to="/game">Game</Link>
-            </button>
+            <Link to="/game">Game</Link>
           </li>
+          {/* <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/nothing-here">Nothing Here</Link>
+          </li> */}
         </ul>
-      </div>
+      </nav>
+      <Outlet />
     </>
   );
 }

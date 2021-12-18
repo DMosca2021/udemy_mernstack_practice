@@ -1,9 +1,10 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
-import Home from './pages/Home';
-import Game from './pages/Game';
-import Nav from './components/Nav';
+import Home from "./pages/Home";
+import Game from "./pages/Game";
+import Nav from "./components/Nav";
 
 function App() {
   return (
@@ -23,7 +24,19 @@ function App() {
         </a>
         
       </header> */}
-      <Game />
+      {/* <Game /> */}
+      <>
+        <div>
+          <Routes>
+            <Route exact path="/" element={<Nav />}></Route>
+            <Route index element={<Home />}></Route>
+            <Route path="/game" element={<Game />}></Route>
+            {/* <Route path="/dashboard">
+            <Dashboard />
+          </Route> */}
+          </Routes>
+        </div>
+      </>
     </div>
   );
 }

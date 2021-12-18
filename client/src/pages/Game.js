@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Nav from "../components/Nav";
 
 import MainScene from "../game/MainScene";
 
@@ -83,6 +84,8 @@ function Game() {
 
   return (
     <div>
+      <h1>This is the game</h1>
+      <Nav />
       <div id="game-content"></div>
     </div>
   );
