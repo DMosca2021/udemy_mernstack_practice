@@ -1,8 +1,8 @@
 import Phaser from "phaser";
 // import { Scene } from "phaser";
 
-import spriteAtlas from '../assets/images/test_sprite_atlas.json'
-import testSprite from '../assets/images/test_sprite.png'
+import spriteAtlas from '../../assets/atlases/test_sprite_atlas.json'
+import testSprite from '../../assets/atlases/test_sprite.png'
 // import spriteAtlas2 from '../assets/images/test_sprite2_atlas.json'
 // import testSprite2 from '../assets/images/test_sprite2.png'
 // import knightAtlas from '../assets/images/knight-sprite.json'

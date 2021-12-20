@@ -1,22 +1,33 @@
 import Phaser from "phaser";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+
 import MainScene from "../game/MainScene";
+
+import { simpleAction } from '../redux/actions/simpleAction';
 
 function Game() {
   //-----Beginning to the game arrow function from https://github.com/blopa/top-down-react-phaser-game-template/blob/main/src/Game.jsx
   // Trying to get the useEffect working so the game does not render multiple times.
 
-  /*   const dispatch = useDispatch();
+
+  const number = useSelector((state) => {
+    return state.simple.number
+  });
+
+  const dispatch = useDispatch();
+ 
   const [game, setGame] = useState(null);
 
   useEffect(() => {
-    if (game) {
-      return;
-    }
+    // if (game) {
+    //   return;
+    // }
 
     const phaserGame = new Phaser.Game({
       type: Phaser.AUTO,
+      title: 'Phaser/React-test-game',
       width: 512,
       height: 512,
       backgroundColor: "#333333",
@@ -32,10 +43,10 @@ function Game() {
     });
 
     setGame(phaserGame);
-  }, [game]); */
+  }, [game]);
 
   // Config for survival game
-  const config = {
+/*   const config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
@@ -51,7 +62,7 @@ function Game() {
     scene: [MainScene],
   };
 
-  const game = new Phaser.Game(config);
+  const game = new Phaser.Game(config); */
 
   return (
     <div>
